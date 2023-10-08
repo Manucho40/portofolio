@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Carter+One&family=Kanit:ital,wght@0,300;1,300;1,900&family=Lobster&family=Miltonian+Tattoo&family=Pacifico&family=Russo+One&family=Wendy+One&display=swap");
+
+.accueil {
+  /* margin-top: 50px; */
+  position: relative;
+  top: -120px;
+}
+.bienvenu {
+  font-family: "Abril Fatface", cursive;
+  font-size: 18px;
+}
+.bigCol {
+  display: flex;
+  /* padding: 20px; */
+}
+.smallCol {
+  background-color: red;
+  text-align: "center";
+  padding: 20px;
+  border-radius: 20;
+}
+@media (max-width: 768px) {
+  .infos {
+    display: flex;
+    flex-direction: column;
+  }
+  .alignBox {
+    display: flex;
+    flex-direction: column;
+  }
+  .infoText {
+    margin-top: 10px;
+  }
+
+  .infosTechnic {
+    margin-top: 20px;
+  }
+  .infoPlus {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .infosTechnic {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1200px) {
+}

@@ -1,0 +1,28 @@
+.link {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.description p {
+  text-align: center;
+}
+
+.description {
+  margin-bottom: 10px;
+}
+
+.stack {
+  text-align: center;
+}
+.responsive-text {
+  font-size: 54px; /* Default font size */
+}
+@media (max-width: 768px) {
+  .modalImg {
+    width: 100%;
+    height: 100%;
+  }
+  .responsive-text {
+    font-size: 25px; /* Default font size */
+  }
+}

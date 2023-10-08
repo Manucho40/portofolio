@@ -1,0 +1,47 @@
+.Apropos {
+  position: relative;
+  top: -120px;
+}
+.responsive-text {
+  font-size: 54px; /* Default font size */
+}
+
+.starMarg {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+@media (max-width: 768px) {
+  .infos {
+    display: flex;
+    flex-direction: column;
+  }
+  .center {
+    justify-content: center;
+  }
+  .starMarg {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .responsive-text {
+    font-size: 40px; /* Default font size */
+  }
+
+  .infoText {
+    margin-top: 10px;
+  }
+
+  .infosTechnic {
+    margin-top: 20px;
+  }
+  .infoPlus {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .infosTechnic {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1200px) {
+}

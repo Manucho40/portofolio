@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_apps",
+  "info": {
+    "singularName": "type-app",
+    "pluralName": "type-apps",
+    "displayName": "Typeapp",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "libelle": {
+      "type": "string"
+    }
+  }
+}
