@@ -49,7 +49,7 @@ const Apropos = () => {
                 style={{ fontFamily: "impact" }}
                 className="responsive-text animate__animated animate__flipInX animate__delay-2s"
               >
-                SELF-SUMMARY
+                SUR MOI
               </h1>
               <img
                 src={star}
@@ -113,7 +113,7 @@ const Apropos = () => {
           >
             <h3>EXPERIENCE</h3>
             <InfosCv
-              annees="2020 - 2023"
+              annees="2020 - 2024"
               poste="Assistant IT"
               institution="Cabinet NID"
             />

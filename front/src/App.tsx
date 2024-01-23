@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Accueil from "./pages/accueil/Accueil";
@@ -10,10 +10,18 @@ import Portofolio from "./pages/portofolio/Portofolio";
 import Contact from "./pages/contact/Contact";
 import Footer from "./components/Footer/Footer";
 import MobileNav from "./components/Header/MobileNav";
+import Loader from "./components/Loader";
 
 function App() {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
-
+  const [loading, setLoading] = useState(false);
+  console.log(loading);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
     <ConfigProvider
       theme={{
@@ -28,17 +36,21 @@ function App() {
         },
       }}
     >
-      <div className="App">
-        <Header setOpenMenu={setOpenMenu} openMenu={openMenu} />
-        <MobileNav openMenu={openMenu} setOpenMenu={setOpenMenu} />
-        <Routes>
-          <Route path="/" element={<Accueil />} />
-          <Route path="/apropos" element={<Apropos />}></Route>
-          <Route path="/portofolio" element={<Portofolio />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-        </Routes>
-        <Footer />
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="App">
+          <Header setOpenMenu={setOpenMenu} openMenu={openMenu} />
+          <MobileNav openMenu={openMenu} setOpenMenu={setOpenMenu} />
+          <Routes>
+            <Route path="/" element={<Accueil />} />
+            <Route path="/apropos" element={<Apropos />}></Route>
+            <Route path="/portofolio" element={<Portofolio />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+          </Routes>
+          <Footer />
+        </div>
+      )}
     </ConfigProvider>
   );
 }
