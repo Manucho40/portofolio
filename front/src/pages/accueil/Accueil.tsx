@@ -63,7 +63,7 @@ const Accueil = () => {
           >
             <span>Developpeur Web & Mobile</span>
             <h2 style={{ fontSize: 25 }}>Ange Emmanuel KOUASSI</h2>
-            <span>Je suis un développeur web et Mobile basé à Abidjan</span>
+            <span>Je suis un développeur Web et Mobile basé à Abidjan</span>
           </Col>
         </Col>
         <Col
@@ -159,7 +159,7 @@ const Accueil = () => {
             >
               <p
                 style={{
-                  fontSize: 20,
+                  fontSize: 10,
                   fontWeight: "bold",
                 }}
               >
@@ -167,7 +167,7 @@ const Accueil = () => {
               </p>
               <FontAwesomeIcon
                 icon={faLaptopCode}
-                size="2x"
+                size="1x"
                 style={{ opacity: 0.2 }}
               />
             </Col>

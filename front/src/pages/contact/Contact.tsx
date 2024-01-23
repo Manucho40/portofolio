@@ -1,3 +1,4 @@
+import React, { useRef } from "react";
 import { Button, Checkbox, Col, Form, Input, Row } from "antd";
 import "./Contact.css";
 import {
@@ -12,23 +13,43 @@ import CardContact from "../../components/CardContact/CardContact";
 import IconeCircle from "../../components/Cubes/IconeCircle/IconeCircle";
 import { Link } from "react-router-dom";
 import fleche from "../../assets/fleche.png";
-
+import emailjs from "@emailjs/browser";
 const style: React.CSSProperties = { background: "#0092ff", padding: "8px 0" };
-const onFinish = (values: any) => {
-  console.log("Success:", values);
-};
-
-const onFinishFailed = (errorInfo: any) => {
-  console.log("Failed:", errorInfo);
-};
 
 type FieldType = {
-  username?: string;
-  email?: string;
-  sujet: string;
+  from_name?: string;
+  to_name?: string;
   message?: string;
 };
+
 const Contact = () => {
+  const form: any = useRef();
+
+  const onFinish = (values: any) => {
+    console.log(values);
+    emailjs
+      .sendForm(
+        "service_zbx9ki8",
+        "template_zdqdztg",
+        values,
+        "CoK2I82jv0WashQFE"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
+  };
+
+  console.log(form?.current);
+
   return (
     <Row className="contact" gutter={20}>
       <Col className="gutter-row" xs={24} sm={24} md={6} lg={6}>
@@ -120,12 +141,13 @@ const Contact = () => {
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
               autoComplete="off"
+              ref={form}
             >
               <Form.Item<FieldType>
-                name="username"
+                name="to_name"
                 wrapperCol={{ span: 24 }}
                 rules={[
-                  { required: true, message: "Please input your username!" },
+                  { required: true, message: "Saisissez votre nom svp!" },
                 ]}
               >
                 <Input
@@ -133,19 +155,20 @@ const Contact = () => {
                   size="large"
                   className="backgroundInput"
                   style={{ border: "none", color: "white" }}
+                  name="to_name"
                 />
               </Form.Item>
               <Form.Item<FieldType>
-                name="email"
+                name="from_name"
                 wrapperCol={{ span: 24 }}
                 rules={[
                   {
                     type: "email",
-                    message: "The input is not valid E-mail!",
+                    message: "Le mail n'est pas valide!",
                   },
                   {
                     required: true,
-                    message: "Please input your E-mail!",
+                    message: "Saisissez votre mail svp!",
                   },
                 ]}
               >
@@ -154,27 +177,18 @@ const Contact = () => {
                   size="large"
                   className="backgroundInput"
                   style={{ border: "none", color: "white" }}
+                  name="from_name"
                 />
               </Form.Item>
-              <Form.Item<FieldType>
-                name="sujet"
-                wrapperCol={{ span: 24 }}
-                rules={[
-                  { required: true, message: "Please input your username!" },
-                ]}
-              >
-                <Input
-                  placeholder="Objet"
-                  size="large"
-                  className="backgroundInput"
-                  style={{ border: "none", color: "white" }}
-                />
-              </Form.Item>
+
               <Form.Item<FieldType>
                 name="message"
                 wrapperCol={{ span: 24 }}
                 rules={[
-                  { required: true, message: "Please input your username!" },
+                  {
+                    required: true,
+                    message: "Saisissez le contenu de votre mail!",
+                  },
                 ]}
               >
                 <Input.TextArea
@@ -182,6 +196,7 @@ const Contact = () => {
                   className="backgroundInput"
                   style={{ border: "none", color: "white" }}
                   autoSize={{ minRows: 6, maxRows: 6 }}
+                  name="message"
                 />
               </Form.Item>
 

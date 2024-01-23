@@ -85,11 +85,12 @@ const Apropos = () => {
                       fontSize: "16px",
                     }}
                   >
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Saepe dolorem pariatur veniam adipisci placeat, similique
-                    tempore accusantium eos iste blanditiis officiis magni,
-                    laboriosam quasi cupiditate possimus quia eius voluptatem
-                    quidem?
+                    Développeur Web et Mobile passionné et créatif avec de
+                    solides connaissances dans la conception et le développement
+                    d’applications web performantes. Compétent dans les langages
+                    informatiques tels que JavaScript et C#, ainsi que dans des
+                    frameworks populaires tels que React, React Native, NodeJS
+                    et ASP.NET.
                   </p>
                 </Col>
               </Row>

@@ -2,7 +2,3 @@
   position: relative;
   top: -120px;
 }
-::placeholder {
-  color: red;
-  opacity: 1; /* Firefox */
-}

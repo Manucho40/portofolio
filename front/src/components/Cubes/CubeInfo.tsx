@@ -36,7 +36,7 @@ const CubeInfo: FC<Props> = ({ img, text, taille }) => {
         >
           <p
             style={{
-              fontSize: 20,
+              fontSize: 10,
               fontWeight: "bold",
             }}
           >
@@ -44,7 +44,7 @@ const CubeInfo: FC<Props> = ({ img, text, taille }) => {
           </p>
           <FontAwesomeIcon
             icon={faLaptopCode}
-            size="2x"
+            size="1x"
             style={{ opacity: overCube ? 1 : 0.2, transition: "500ms" }}
             className="App-logo"
           />
