@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Accueil from "./pages/accueil/Accueil";
 import Header from "./components/Header/Header";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Apropos from "./pages/apropos/Apropos";
 import Portofolio from "./pages/portofolio/Portofolio";
