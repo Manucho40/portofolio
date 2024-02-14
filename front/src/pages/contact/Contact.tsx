@@ -119,7 +119,7 @@ const Contact = () => {
                 <Link
                   to="/contact"
                   style={{
-                    color: "#5b78f6",
+                    color: "#0CC0DF",
                     fontWeight: 500,
                     marginRight: 10,
                   }}

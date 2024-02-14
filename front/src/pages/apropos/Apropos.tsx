@@ -185,7 +185,7 @@ const Apropos = () => {
                   Let's work&nbsp;
                   <Link
                     to="/contact"
-                    style={{ color: "#5b78f6", fontWeight: 500 }}
+                    style={{ color: "#0CC0DF", fontWeight: 500 }}
                   >
                     Together
                   </Link>

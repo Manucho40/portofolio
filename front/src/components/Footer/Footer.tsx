@@ -1,12 +1,13 @@
 import { Row, Col } from "antd";
 import "./Footer.css";
 import Nav from "../Header/Nav";
+import logo from "../../assets/AngeDev-logo.png";
 const Footer = () => {
   return (
     <div className="footer">
       <Row className="marginFooter">
         <Col span={24}>
-          <h1 className="logo">KaeDev</h1>
+          <img style={{ width: 170 }} src={logo} alt="logo" />
         </Col>
       </Row>
       <Row className="marginFooter">

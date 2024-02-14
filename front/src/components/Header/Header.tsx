@@ -4,11 +4,13 @@ import { useState } from "react";
 import Nav from "./Nav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import logo from "../../assets/AngeDev-logo.png";
 const Header = ({ openMenu, setOpenMenu }: any) => {
   return (
     <header>
       <div>
-        <h1 className="logo">KaeDev</h1>
+        {/* <h1 className="logo">AngeDev</h1> */}
+        <img style={{ width: 170 }} src={logo} alt="logo" />
       </div>
       <Nav />
       <div className="containerButton">

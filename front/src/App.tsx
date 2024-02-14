@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Accueil from "./pages/accueil/Accueil";
 import Header from "./components/Header/Header";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Apropos from "./pages/apropos/Apropos";
 import Portofolio from "./pages/portofolio/Portofolio";
@@ -39,17 +39,19 @@ function App() {
       {loading ? (
         <Loader />
       ) : (
-        <div className="App">
-          <Header setOpenMenu={setOpenMenu} openMenu={openMenu} />
-          <MobileNav openMenu={openMenu} setOpenMenu={setOpenMenu} />
-          <Routes>
-            <Route path="/" element={<Accueil />} />
-            <Route path="/apropos" element={<Apropos />}></Route>
-            <Route path="/portofolio" element={<Portofolio />}></Route>
-            <Route path="/contact" element={<Contact />}></Route>
-          </Routes>
-          <Footer />
-        </div>
+        <Router>
+          <div className="App">
+            <Header setOpenMenu={setOpenMenu} openMenu={openMenu} />
+            <MobileNav openMenu={openMenu} setOpenMenu={setOpenMenu} />
+            <Routes>
+              <Route path="/" element={<Accueil />} />
+              <Route path="/apropos" element={<Apropos />}></Route>
+              <Route path="/portofolio" element={<Portofolio />}></Route>
+              <Route path="/contact" element={<Contact />}></Route>
+            </Routes>
+            <Footer />
+          </div>
+        </Router>
       )}
     </ConfigProvider>
   );

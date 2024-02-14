@@ -36,7 +36,7 @@ const Accueil = () => {
             style={{
               width: "250px",
               height: "224px",
-              background: "#5b78f6",
+              background: "#0CC0DF",
               borderTopLeftRadius: 20,
               borderBottomRightRadius: 20,
             }}
@@ -259,7 +259,7 @@ const Accueil = () => {
                   <Link
                     to="/contact"
                     style={{
-                      color: "#5b78f6",
+                      color: "#0CC0DF",
                       fontWeight: 500,
                       marginRight: 10,
                     }}

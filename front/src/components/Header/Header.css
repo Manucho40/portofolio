@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Carter+One&family=Kanit:ital,wght@0,300;1,300;1,900&family=Lobster&family=Miltonian+Tattoo&family=Pacifico&family=Russo+One&family=Wendy+One&display=swap");
-
+@font-face {
+  font-family: "Blueberry";
+  src: url("../../assets/Blueberry.ttf");
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -9,7 +12,7 @@ header {
   /* background-color: #000; */
 }
 .logo {
-  font-family: "Abril Fatface", cursive;
+  font-family: "Blueberry";
 }
 .nav {
   display: flex;
@@ -36,6 +39,8 @@ li a:hover {
 
 .containerButton {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   /* background-color: red; */
 }
 a {
@@ -64,7 +69,7 @@ a {
   padding: 0;
   position: relative;
   transition: 200ms ease-in-out;
-  top: -230px;
+  top: -338px;
   z-index: 1;
   background-color: #0f0f0f;
   border-bottom: 0.5px solid white;
