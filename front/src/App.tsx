@@ -14,13 +14,10 @@ import Loader from "./components/Loader";
 
 function App() {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   console.log(loading);
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    setLoading(false);
   }, []);
   return (
     <ConfigProvider
