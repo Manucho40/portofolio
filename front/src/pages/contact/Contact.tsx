@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Button, Checkbox, Col, Form, Input, Row } from "antd";
+import { Col, Row } from "antd";
 import "./Contact.css";
 import {
   faGithub,
@@ -13,43 +13,14 @@ import CardContact from "../../components/CardContact/CardContact";
 import IconeCircle from "../../components/Cubes/IconeCircle/IconeCircle";
 import { Link } from "react-router-dom";
 import fleche from "../../assets/fleche.png";
+import ContactForm from "../../components/Forms/ContactForm";
+import { Button, Form, Input } from "antd";
 import emailjs from "@emailjs/browser";
+import transition from "../../components/transition";
+
 const style: React.CSSProperties = { background: "#0092ff", padding: "8px 0" };
 
-type FieldType = {
-  from_name?: string;
-  to_name?: string;
-  message?: string;
-};
-
 const Contact = () => {
-  const form: any = useRef();
-
-  const onFinish = (values: any) => {
-    console.log(values);
-    emailjs
-      .sendForm(
-        "service_zbx9ki8",
-        "template_zdqdztg",
-        values,
-        "CoK2I82jv0WashQFE"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
-  };
-
-  console.log(form?.current);
-
   return (
     <Row className="contact" gutter={20}>
       <Col className="gutter-row" xs={24} sm={24} md={6} lg={6}>
@@ -133,83 +104,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="infoText">
-            <Form
-              name="basic"
-              wrapperCol={{ span: 24 }}
-              // style={{ maxWidth: 600 }}
-              initialValues={{ remember: true }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-              autoComplete="off"
-              ref={form}
-            >
-              <Form.Item<FieldType>
-                name="to_name"
-                wrapperCol={{ span: 24 }}
-                rules={[
-                  { required: true, message: "Saisissez votre nom svp!" },
-                ]}
-              >
-                <Input
-                  placeholder="Nom"
-                  size="large"
-                  className="backgroundInput"
-                  style={{ border: "none", color: "white" }}
-                  name="to_name"
-                />
-              </Form.Item>
-              <Form.Item<FieldType>
-                name="from_name"
-                wrapperCol={{ span: 24 }}
-                rules={[
-                  {
-                    type: "email",
-                    message: "Le mail n'est pas valide!",
-                  },
-                  {
-                    required: true,
-                    message: "Saisissez votre mail svp!",
-                  },
-                ]}
-              >
-                <Input
-                  placeholder="Email"
-                  size="large"
-                  className="backgroundInput"
-                  style={{ border: "none", color: "white" }}
-                  name="from_name"
-                />
-              </Form.Item>
-
-              <Form.Item<FieldType>
-                name="message"
-                wrapperCol={{ span: 24 }}
-                rules={[
-                  {
-                    required: true,
-                    message: "Saisissez le contenu de votre mail!",
-                  },
-                ]}
-              >
-                <Input.TextArea
-                  placeholder="Message"
-                  className="backgroundInput"
-                  style={{ border: "none", color: "white" }}
-                  autoSize={{ minRows: 6, maxRows: 6 }}
-                  name="message"
-                />
-              </Form.Item>
-
-              <Form.Item wrapperCol={{ span: 24 }}>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  style={{ width: "100%" }}
-                >
-                  Submit
-                </Button>
-              </Form.Item>
-            </Form>
+            <ContactForm />
           </div>
         </div>
       </Col>
@@ -217,4 +112,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default transition(Contact);

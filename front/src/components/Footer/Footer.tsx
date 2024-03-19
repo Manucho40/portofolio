@@ -17,7 +17,7 @@ const Footer = () => {
       </Row>
       <Row className="marginFooter">
         <Col span={24}>
-          <span>© Tout droits reservés a KaeDev</span>
+          <span>© Tout droits reservés à AngeDev</span>
         </Col>
       </Row>
     </div>

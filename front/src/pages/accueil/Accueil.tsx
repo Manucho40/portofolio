@@ -15,6 +15,7 @@ import moi from "../../assets/moi.png";
 import blog from "../../assets/blog.png";
 import { Link, NavLink } from "react-router-dom";
 import "animate.css";
+import transition from "../../components/transition";
 const Accueil = () => {
   return (
     <div className="accueil">
@@ -277,4 +278,4 @@ const Accueil = () => {
   );
 };
 
-export default Accueil;
+export default transition(Accueil);

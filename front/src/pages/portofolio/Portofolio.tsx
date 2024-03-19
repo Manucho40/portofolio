@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./Portofolio.css";
-import CardProject from "../../components/Cards/CardProject";
 import img from "../../assets/instaclone.png";
 import axios from "axios";
 import { Button, Col, Modal, Row } from "antd";
 import ModalProject from "../../components/Modals/ModalProject";
 import { faLinesLeaning } from "@fortawesome/free-solid-svg-icons";
 import { RotatingLines } from "react-loader-spinner";
+import CardProject from "../../components/CardProject/CardProject";
+import { motion } from "framer-motion";
+import img1 from "../../assets/proj_instagram.png";
+import img2 from "../../assets/proj_chat.png";
+import img3 from "../../assets/proj_compress_img.png";
+import img4 from "../../assets/proj_moovies.png";
+import img5 from "../../assets/proj_morpion.png";
+import transition from "../../components/transition";
 const Portofolio = () => {
   const [typeProject, setTypeProject] = useState<string>("All");
   const [projects, setProjects] = useState<any[] | null>(null);
@@ -14,20 +21,20 @@ const Portofolio = () => {
   const [open, setOpen] = useState(false);
   const [modaldata, setModaldata] = useState<any | null>(null);
 
-  useEffect(() => {
-    try {
-      setLoading(true);
-      const response = axios
-        .get("http://localhost:1337/api/projects?populate=*")
-        .then((res) => {
-          setLoading(false);
-          setProjects(res.data.data);
-        });
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
-    }
-  }, []);
+  // useEffect(() => {
+  //   try {
+  //     setLoading(true);
+  //     const response = axios
+  //       .get("http://localhost:1337/api/projects?populate=*")
+  //       .then((res) => {
+  //         setLoading(false);
+  //         setProjects(res.data.data);
+  //       });
+  //   } catch (error) {
+  //     setLoading(false);
+  //     console.log(error);
+  //   }
+  // }, []);
   // console.log(projects && projects[0].attributes.images.data[0].attributes.url);
 
   const portofolioTrie =
@@ -43,79 +50,38 @@ const Portofolio = () => {
     setOpen(!open);
   }
 
-  const portofolio: any =
-    portofolioTrie &&
-    portofolioTrie.map((project) => (
-      <CardProject
-        // img={project.attributes.images.data[0].attributes.url}
-        // name={project.attributes.Title}
-        // typeApp={project.attributes.typeapp.data.attributes.libelle}
-        project={project}
-        key={project.id}
-        open={open}
-        openModal={openModal}
-      />
-    ));
+  // const portofolio: any =
+  //   portofolioTrie &&
+  //   portofolioTrie.map((project) => (
+  //     <CardProject
+  //       // img={project.attributes.images.data[0].attributes.url}
+  //       // name={project.attributes.Title}
+  //       // typeApp={project.attributes.typeapp.data.attributes.libelle}
+  //       project={project}
+  //       key={project.id}
+  //       open={open}
+  //       openModal={openModal}
+  //     />
+  //   ));
   return (
     <div className="Portofolio">
-      <ul>
-        <li className="typeProject">
-          <button
-            onClick={() => setTypeProject("All")}
-            className={typeProject === "All" ? "projectSelected" : ""}
-          >
-            All
-          </button>
-        </li>
-        <li className="typeProject">
-          <button
-            onClick={() => setTypeProject("Web")}
-            className={typeProject === "Web" ? "projectSelected" : ""}
-          >
-            Web
-          </button>
-        </li>
-        <li className="typeProject">
-          <button
-            onClick={() => setTypeProject("Extension")}
-            className={typeProject === "Extension" ? "projectSelected" : ""}
-          >
-            Extension
-          </button>
-        </li>
-        <li className="typeProject">
-          <button
-            onClick={() => setTypeProject("Mobile")}
-            className={typeProject === "Mobile" ? "projectSelected" : ""}
-          >
-            Mobile
-          </button>
-        </li>
-      </ul>
-      <ModalProject open={open} setOpen={setOpen} modaldata={modaldata} />
-      {loading ? (
-        <div
-          style={{
-            height: "50vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <RotatingLines
-            visible={true}
-            width="96"
-            strokeWidth="5"
-            strokeColor="gray"
-            animationDuration="0.75"
-            ariaLabel="rotating-lines-loading"
-          />
-        </div>
-      ) : (
-        <div className="bodyList">{portofolio}</div>
-      )}
+      <div
+        style={{
+          display: "flex",
+          color: "white",
+          justifyContent: "space-around",
+          flexWrap: "wrap",
+        }}
+      >
+        {/* <CardProject img={img1} />
+        <CardProject img={img2} />
+        <CardProject img={img3} />
+        <CardProject img={img4} />
+        <CardProject img={img5} /> */}
+        <h1>En cours de réalisation...</h1>
+      </div>
     </div>
   );
 };
 
-export default Portofolio;
+export default transition(Portofolio);

@@ -1,0 +1,15 @@
+.CardProject {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+:where(.css-dev-only-do-not-override-ukyltv).ant-card .ant-card-meta-title {
+  color: white !important;
+}
+:where(.css-dev-only-do-not-override-ukyltv).ant-card
+  .ant-card-meta-description {
+  color: white;
+}
+
+.ant-card-body {
+  padding-left: 0 !important;
+}

@@ -6,10 +6,6 @@
   font-size: 54px; /* Default font size */
 }
 
-.starMarg {
-  margin-top: 10px;
-  margin-right: 5px;
-}
 @media (max-width: 768px) {
   .infos {
     display: flex;

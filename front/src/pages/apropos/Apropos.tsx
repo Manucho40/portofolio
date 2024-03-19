@@ -2,13 +2,14 @@ import { Col, Image, Row } from "antd";
 import moi from "../../assets/moi.png";
 import "./Apropos.css";
 import fleche from "../../assets/fleche.png";
-import star from "../../assets/star.png";
 import InfosCv from "../../components/InfosCv/InfosCv";
 import cv from "../../assets/cv.png";
 import CubeInfo from "../../components/Cubes/CubeInfo";
 import { Link } from "react-router-dom";
-import CubePrfoile from "../../components/Cubes/CubeProfile";
+import CubeProfile from "../../components/Cubes/CubeProfile";
 import mywork from "../../assets/my-works.png";
+import TitleWithStart from "../../components/TitleWithStart";
+import transition from "../../components/transition";
 
 const Apropos = () => {
   const openPDF = () => {
@@ -38,28 +39,8 @@ const Apropos = () => {
         <Col className="gutter-row infoPlus" xs={24} sm={24} md={18} lg={18}>
           <div>
             <Col span={24} style={{ display: "flex" }} className="center">
-              <img
-                src={star}
-                alt=""
-                width={50}
-                height={50}
-                className="starMarg"
-              />
-              <h1
-                style={{ fontFamily: "impact" }}
-                className="responsive-text animate__animated animate__flipInX animate__delay-2s"
-              >
-                SUR MOI
-              </h1>
-              <img
-                src={star}
-                alt=""
-                width={50}
-                height={50}
-                className="starMarg"
-              />
+              <TitleWithStart title="A propos de moi" />
             </Col>
-
             <Col
               xs={24}
               sm={24}
@@ -87,10 +68,9 @@ const Apropos = () => {
                   >
                     Développeur Web et Mobile passionné et créatif avec de
                     solides connaissances dans la conception et le développement
-                    d’applications web performantes. Compétent dans les langages
-                    informatiques tels que JavaScript et C#, ainsi que dans des
-                    frameworks populaires tels que React, React Native, NodeJS
-                    et ASP.NET.
+                    d’applications web performantes. Compétent dans le langage
+                    JavaScript, ainsi que dans des frameworks populaires tels
+                    que React, React Native, NodeJS et Express.
                   </p>
                 </Col>
               </Row>
@@ -202,7 +182,7 @@ const Apropos = () => {
           lg={6}
         >
           <div style={{ height: "100%" }}>
-            <CubePrfoile text="Réseaux" img={mywork} taille={24} />
+            <CubeProfile text="Réseaux" img={mywork} taille={24} />
           </div>
         </Col>
       </Row>
@@ -210,4 +190,4 @@ const Apropos = () => {
   );
 };
 
-export default Apropos;
+export default transition(Apropos);

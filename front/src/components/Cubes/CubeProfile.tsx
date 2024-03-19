@@ -10,7 +10,7 @@ type Props = {
   text: string;
   taille: number;
 };
-const CubePrfoile: FC<Props> = ({ img, text, taille }) => {
+const CubeProfile: FC<Props> = ({ img, text, taille }) => {
   const [overCube, setOverCube] = useState<boolean>(false);
   return (
     <Col
@@ -47,7 +47,7 @@ const CubePrfoile: FC<Props> = ({ img, text, taille }) => {
             />
             <IconeCircle
               valueIcon={faLinkedin}
-              url="https://www.linkedin.com/in/ange-emmanuel-kouassi-86b33316b/"
+              url="https://www.linkedin.com/in/ange-emmanuel-kouassi"
             />
           </Col>
         </Col>
@@ -83,4 +83,4 @@ const CubePrfoile: FC<Props> = ({ img, text, taille }) => {
   );
 };
 
-export default CubePrfoile;
+export default CubeProfile;
