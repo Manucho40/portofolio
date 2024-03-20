@@ -5,10 +5,13 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 type Props = {
-  img: string;
+  img: any;
+  appName: string;
+  typeApp: string;
+  projectId: number;
 };
 
-const CardProject: React.FC<Props> = ({ img }) => {
+const CardProject: React.FC<Props> = ({ img, appName, typeApp, projectId }) => {
   const ref = useRef<any>();
 
   const cardSurvol = (Event: any) => {
@@ -23,8 +26,9 @@ const CardProject: React.FC<Props> = ({ img }) => {
       ref.current.style.transition = "ease-in-out 0.5s";
     }
   };
+  const imgUrl = `http://localhost:1337${img}`;
   return (
-    <Link to={`/detail/${1}`}>
+    <Link to={`/detail/${projectId}`}>
       <motion.div
         whileHover={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -45,15 +49,11 @@ const CardProject: React.FC<Props> = ({ img }) => {
               style={{ borderRadius: 20, width: "100%", height: 200 }}
               // onMouseOver={cardSurvol}
               // onMouseLeave={resetCardSurvol}
-              src={img}
+              src={imgUrl}
             />
           }
         >
-          <Meta
-            className="meta"
-            title="Europe Street beat"
-            description="www.instagram.com"
-          />
+          <Meta className="meta" title={appName} description={typeApp} />
         </Card>
       </motion.div>
     </Link>

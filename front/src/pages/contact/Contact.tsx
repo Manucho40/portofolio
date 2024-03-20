@@ -60,7 +60,7 @@ const Contact = () => {
               />
               <IconeCircle
                 valueIcon={faLinkedin}
-                url="https://www.linkedin.com/in/ange-emmanuel-kouassi-86b33316b/"
+                url="https://www.linkedin.com/in/ange-emmanuel-kouassi/"
               />
               <IconeCircle
                 valueIcon={faTwitter}

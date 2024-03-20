@@ -4,12 +4,25 @@ import img from "../../assets/proj_instagram.png";
 import InfosCv from "../../components/InfosCv/InfosCv";
 import { Col, Image, Row } from "antd";
 import { motion } from "framer-motion";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import ProjectsContext from "../../context/ProjectsContext";
 const DetailsProject = () => {
+  const params = useParams();
+  const projects = useContext<any>(ProjectsContext).projects;
+  const project = projects.find(
+    (project: any) => project.id === Number(params.id)
+  );
+  const imgUrl = `http://localhost:1337${project.attributes.images.data[0].attributes.url}`;
+  console.log(project);
+
   return (
     <div className="DetailsProject">
-      <p className="type-app">Application - Mobile</p>
+      <p className="type-app">
+        {project.attributes.typeapp.data.attributes.libelle}
+      </p>
       <div className="title">
-        <TitleWithStart title="CLONE INSTAGRAM" />
+        <TitleWithStart title={project.attributes.Title} />
       </div>
       <motion.div
         animate={{ scale: 1 }}
@@ -17,7 +30,7 @@ const DetailsProject = () => {
         transition={{ type: "spring", duration: 2 }}
         className="banner"
       >
-        <img src={img} alt="insta" />
+        <img src={imgUrl} alt="insta" />
       </motion.div>
       <div className="About">
         <Row gutter={10} style={{ marginTop: 10 }}>
@@ -34,10 +47,7 @@ const DetailsProject = () => {
               style={{ padding: 20 }}
             >
               <p className="type-app">Description</p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae,
-              iusto harum illo laborum unde praesentium nihil natus ad hic
-              voluptatum iure inventore similique quis aut qui nostrum, ratione
-              facere! Dolore?
+              {project.attributes.description}
             </div>
           </Col>
           <Col
@@ -54,30 +64,22 @@ const DetailsProject = () => {
             >
               <p className="type-app">La Stack</p>
               <ul>
-                <li>React Js</li>
-                <li>Ant Design</li>
-                <li>Node Js</li>
-                <li>ExpressJs</li>
+                <li>{project.attributes.stack}</li>
               </ul>
             </div>
           </Col>
         </Row>
       </div>
       <div className="screen">
-        <div style={{ marginBottom: 10 }}>
-          <Image
-            width={500}
-            style={{ borderRadius: 20 }}
-            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-          />
-        </div>
-        <div style={{ marginBottom: 10 }}>
-          <Image
-            width={500}
-            style={{ borderRadius: 20 }}
-            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-          />
-        </div>
+        {project.attributes.images.data.map((image: any) => (
+          <div style={{ marginBottom: 10 }}>
+            <Image
+              width={300}
+              style={{ borderRadius: 20 }}
+              src={`http://localhost:1337${image.attributes.url}`}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
