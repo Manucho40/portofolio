@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import ProjectsContext from "../../context/ProjectsContext";
+import BaseURL from "../../config";
 const DetailsProject = () => {
   const params = useParams();
   const projects = useContext<any>(ProjectsContext).projects;
@@ -76,7 +77,7 @@ const DetailsProject = () => {
             <Image
               width={300}
               style={{ borderRadius: 20 }}
-              src={`http://localhost:1337${image.attributes.url}`}
+              src={`${BaseURL}${image.attributes.url}`}
             />
           </div>
         ))}

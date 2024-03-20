@@ -4,6 +4,7 @@ import Meta from "antd/es/card/Meta";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import BaseURL from "../../config";
 type Props = {
   img: any;
   appName: string;
@@ -26,7 +27,7 @@ const CardProject: React.FC<Props> = ({ img, appName, typeApp, projectId }) => {
       ref.current.style.transition = "ease-in-out 0.5s";
     }
   };
-  const imgUrl = `http://localhost:1337${img}`;
+  const imgUrl = `${BaseURL}${img}`;
   return (
     <Link to={`/detail/${projectId}`}>
       <motion.div
