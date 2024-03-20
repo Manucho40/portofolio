@@ -22,6 +22,7 @@ import axios from "axios";
 import ProjectsContext, {
   ProjectContextInterface,
 } from "./context/ProjectsContext";
+import BaseURL from "./config";
 
 function App() {
   const location = useLocation();
@@ -33,7 +34,7 @@ function App() {
     try {
       setLoading(true);
       const response = axios
-        .get("http://localhost:1337/api/projects?populate=*")
+        .get(BaseURL + "/api/projects?populate=*")
         .then((res) => {
           setLoading(false);
           setProjects(res.data.data);
