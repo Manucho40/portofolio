@@ -1,5 +1,5 @@
 const BaseURL =
   process.env.NODE_ENV === "production"
     ? "https://api-angedev.onrender.com"
-    : "http://localhost:1337";
+    : "https://api-angedev.onrender.com";
 export default BaseURL;

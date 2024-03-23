@@ -38,6 +38,10 @@ function App() {
         .then((res) => {
           setLoading(false);
           setProjects(res.data.data);
+        })
+        .catch((error) => {
+          console.error("Une erreur est survenue lors de la demande:", error);
+          // Gérer l'erreur ici (par exemple, afficher un message d'erreur à l'utilisateur)
         });
     } catch (error) {
       setLoading(false);
@@ -45,7 +49,6 @@ function App() {
     }
   }, []);
 
-  console.log(loading);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);

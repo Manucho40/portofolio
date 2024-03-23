@@ -8,15 +8,17 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import ProjectsContext from "../../context/ProjectsContext";
 import BaseURL from "../../config";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 const DetailsProject = () => {
   const params = useParams();
   const projects = useContext<any>(ProjectsContext).projects;
   const project = projects.find(
     (project: any) => project.id === Number(params.id)
   );
-  const imgUrl = `http://localhost:1337${project.attributes.images.data[0].attributes.url}`;
-  console.log(project);
-
+  const imgUrl = `${BaseURL}${project.attributes.images.data[0].attributes.url}`;
+  console.log(project.attributes.githubLink);
   return (
     <div className="DetailsProject">
       <p className="type-app">
@@ -47,7 +49,7 @@ const DetailsProject = () => {
               className="background box-shadow infos infosTechnic"
               style={{ padding: 20 }}
             >
-              <p className="type-app">Description</p>
+              <h3 className="type-app">Description</h3>
               {project.attributes.description}
             </div>
           </Col>
@@ -63,10 +65,51 @@ const DetailsProject = () => {
               className="background box-shadow infos infosTechnic"
               style={{ padding: 20 }}
             >
-              <p className="type-app">La Stack</p>
-              <ul>
-                <li>{project.attributes.stack}</li>
-              </ul>
+              <h3 className="type-app">Informations</h3>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  height: 100,
+                }}
+              >
+                <div style={{ width: "50%" }}>
+                  <p className="type-app"> Stack</p>
+                  <ul>
+                    <li>{project.attributes.stack}</li>
+                  </ul>
+                </div>
+                <div className="lien" style={{ width: "50%" }}>
+                  <p className="type-app"> Liens</p>
+                  <div>
+                    <div
+                      style={{
+                        display: "flex",
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faGithub} size="1x" />
+                      <a
+                        href={`${project.attributes.githubLink}`}
+                        target="true"
+                        style={{ marginLeft: 10, color: "white" }}
+                      >
+                        Lien GitHub
+                      </a>
+                    </div>
+                  </div>
+
+                  <div style={{ marginTop: 10 }}>
+                    <FontAwesomeIcon icon={faGlobe} />
+                    <a
+                      style={{ marginLeft: 10, color: "white" }}
+                      href={`${project.attributes.link}`}
+                      target="true"
+                    >
+                      Lien Site
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </Col>
         </Row>
