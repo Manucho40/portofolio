@@ -128,7 +128,7 @@ const Apropos = () => {
           md={24}
           lg={6}
         >
-          <a href="/assets/CV_KOUASSI_Ange_Emmanuel.pdf" target="_blank">
+          <a href="../../assets/CV_KOUASSI_Ange_Emmanuel.pdf" download>
             <button
               style={{
                 background: "none",

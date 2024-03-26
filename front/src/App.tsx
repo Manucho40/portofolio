@@ -23,7 +23,7 @@ import ProjectsContext, {
   ProjectContextInterface,
 } from "./context/ProjectsContext";
 import BaseURL from "./config";
-
+import data from "./data/projects.json";
 function App() {
   const location = useLocation();
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -31,34 +31,20 @@ function App() {
   const [projects, setProjects] = useState<any[] | null>(null);
 
   useEffect(() => {
-    try {
-      setLoading(true);
-      const response = axios
-        .get(BaseURL + "/api/projects?populate=*")
-        .then((res) => {
-          setLoading(false);
-          setProjects(res.data.data);
-        })
-        .catch((error) => {
-          console.error("Une erreur est survenue lors de la demande:", error);
-          // Gérer l'erreur ici (par exemple, afficher un message d'erreur à l'utilisateur)
-        });
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
-    }
-  }, []);
-
-  useEffect(() => {
+    setLoading(true);
+    setProjects(data.data);
     setTimeout(() => {
       setLoading(false);
     }, 2000);
   }, []);
 
+  // console.log(projects);
   const contextView: ProjectContextInterface = {
     projects,
     setProjects: setProjects,
   };
+
+  console.log(projects);
   return (
     <ConfigProvider
       theme={{

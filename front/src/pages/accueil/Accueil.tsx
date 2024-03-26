@@ -187,49 +187,54 @@ const Accueil = () => {
       <Row gutter={24} style={{ marginTop: 20 }}>
         <Col xs={24} sm={24} md={24} lg={12} className="infos infosTechnic">
           <div
-            style={{ display: "flex", padding: "20px" }}
-            className="background box-shadow alignBox"
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              flexWrap: "wrap",
+              padding: "20px",
+            }}
+            className="background box-shadow "
           >
             <Col
-              offset={2}
               style={{
                 textAlign: "center",
                 padding: "20px",
                 borderRadius: 20,
+                width: 150,
               }}
               className="background box-shadow"
             >
-              <p style={{ fontSize: 50 }}>05</p>
+              <p style={{ fontSize: 50 }}>XX</p>
               <p style={{ fontSize: 15, marginBottom: 10 }}>
                 Années <br /> d'expériences
               </p>
             </Col>
             <Col
-              offset={2}
               style={{
                 textAlign: "center",
                 padding: "20px",
                 borderRadius: 20,
+                width: 150,
               }}
               className="background box-shadow infoText"
             >
-              <p style={{ fontSize: 50 }}>05</p>
+              <p style={{ fontSize: 50 }}>XX</p>
               <p style={{ fontSize: 15, marginBottom: 10 }}>
-                Années <br /> d'expériences
+                Nombre <br /> de clients
               </p>
             </Col>
             <Col
-              offset={2}
               style={{
                 textAlign: "center",
                 padding: "20px",
                 borderRadius: 20,
+                width: 150,
               }}
               className="background box-shadow infoText"
             >
-              <p style={{ fontSize: 50 }}>05</p>
+              <p style={{ fontSize: 50 }}>XX</p>
               <p style={{ fontSize: 15, marginBottom: 10 }}>
-                Années <br /> d'expériences
+                Nombre <br /> de projets
               </p>
             </Col>
           </div>

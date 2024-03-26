@@ -1,0 +1,226 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "title": "Clone Instagram",
+        "description": "L'intégration de l'UI Web d'Instagram est un projet de développement front-end conçu pour mettre en pratique les compétences en React.js et Tailwind CSS. L'objectif était de reproduire fidèlement l'interface utilisateur du site web d'Instagram, en utilisant des technologies modernes et des meilleures pratiques de développement web. Cette initiative offre une opportunité d'appliquer les connaissances acquises dans un environnement de projet concret, en se concentrant sur la création d'une interface responsive et esthétique.",
+        "stack": "React Js, Tailwind Css",
+        "lien": "https://clone-instagram-unhu.onrender.com/",
+        "lienGithub": "https://github.com/Manucho40/clone_instagram",
+        "images": {
+          "data": [
+            {
+              "id": 0,
+              "attributes": {
+                "url": "assets/projet/Instagram1.png"
+              }
+            },
+            {
+              "id": 1,
+              "attributes": {
+                "url": "assets/projet/Instagram2.png"
+              }
+            }
+          ]
+        },
+        "typeapp": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "libelle": "Web"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "title": "Trending Movies",
+        "description": "Moovies App est une application web conçue pour fournir aux utilisateurs une liste des films les plus tendances à une période donnée. Développée en utilisant React.js et en intégrant une API externe de données cinématographiques, cette application offre une expérience utilisateur immersive permettant aux passionnés de cinéma de rester à jour avec les derniers succès du box-office et les films les plus populaires.",
+        "stack": "React Js",
+        "lien": "https://trending-movies-2lcq.onrender.com",
+        "lienGithub": "https://github.com/Manucho40/movies-app",
+        "images": {
+          "data": [
+            {
+              "id": 0,
+              "attributes": {
+                "url": "assets/projet/Moovie1.jpg"
+              }
+            },
+            {
+              "id": 1,
+              "attributes": {
+                "url": "assets/projet/Moovie2.png"
+              }
+            },
+            {
+              "id": 2,
+              "attributes": {
+                "url": "assets/projet/Moovie3.png"
+              }
+            }
+          ]
+        },
+        "typeapp": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "libelle": "Web"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "attributes": {
+        "title": "Morpion Game",
+        "description": "Morpion Game est le fruit d'un projet d'apprentissage visant à explorer et à perfectionner les compétences en reactJs, en algorithmique et en logique de jeu. Cette réalisation représente un parcours d'apprentissage enrichissant, où j'ai pu appliquer les concepts théoriques appris et acquérir de nouvelles compétences pratiques dans le domaine du développement web.",
+        "stack": "React Js",
+        "lien": "https://jeu-du-morpion.onrender.com",
+        "lienGithub": "https://github.com/Manucho40/Jeu-du-Morpion",
+        "images": {
+          "data": [
+            {
+              "id": 0,
+              "attributes": {
+                "url": "assets/projet/Morpion.png"
+              }
+            }
+          ]
+        },
+        "typeapp": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "libelle": "Web"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "attributes": {
+        "title": "Browser Translate Extension",
+        "description": "L'extension TBrowser Translate Extension est un outil pratique conçu pour simplifier la traduction de texte sur le web. En utilisant la technologie React.js et l'API Chrome, cette extension permet aux utilisateurs de traduire facilement du texte français vers l'anglais directement sur une page web en sélectionnant simplement le texte à traduire.",
+        "stack": "React Js, API Chrome",
+        "lien": "Null",
+        "lienGithub": "https://github.com/Manucho40/browser-translate",
+        "images": {
+          "data": [
+            {
+              "id": 0,
+              "attributes": {
+                "url": "assets/projet/Translate.jpeg"
+              }
+            }
+          ]
+        },
+        "typeapp": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "libelle": "Extension Web"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 5,
+      "attributes": {
+        "title": "F-IUTEA",
+        "description": "Ce projet à fait l'objet de mon mémoire de fin d'étude de licence informatique. J'ai eu l'idée de réalisé un forum web pour les étudiants de mon université où ces dernieres pourraient débattre de sujets en relations avec les filiéres de l'université. Pour le front, j'ai utilisé du CSS natif et du Bootstrap. Pour le backend j'ai eu recours à du PHP natif.",
+        "stack": "HTML, CSS, PHP",
+        "lien": "Null",
+        "lienGithub": "https://github.com/Manucho40/forumWeb",
+        "images": {
+          "data": [
+            {
+              "id": 0,
+              "attributes": {
+                "url": "assets/projet/F-IUTEA1.png"
+              }
+            },
+            {
+              "id": 1,
+              "attributes": {
+                "url": "assets/projet/F-IUTEA2.png"
+              }
+            },
+            {
+              "id": 2,
+              "attributes": {
+                "url": "assets/projet/F-IUTEA3.png"
+              }
+            },
+            {
+              "id": 3,
+              "attributes": {
+                "url": "assets/projet/F-IUTEA4.png"
+              }
+            },
+            {
+              "id": 4,
+              "attributes": {
+                "url": "assets/projet/F-IUTEA5.png"
+              }
+            },
+            {
+              "id": 5,
+              "attributes": {
+                "url": "assets/projet/F-IUTEA6.png"
+              }
+            }
+          ]
+        },
+        "typeapp": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "libelle": "Application Web"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 6,
+      "attributes": {
+        "title": "ImgCompress",
+        "description": "CompressorImage est un outil web simple et efficace conçu pour réduire la taille des fichiers image sans compromettre leur qualité. Créé dans le but d'explorer les techniques de compression d'image et d'améliorer les compétences en développement web.",
+        "stack": "React Js",
+        "lien": "https://imgcompress.onrender.com/",
+        "lienGithub": "https://github.com/Manucho40/imgcompress.git",
+        "images": {
+          "data": [
+            {
+              "id": 0,
+              "attributes": {
+                "url": "assets/projet/Compress1.png"
+              }
+            },
+            {
+              "id": 1,
+              "attributes": {
+                "url": "assets/projet/Compress2.png"
+              }
+            }
+          ]
+        },
+        "typeapp": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "libelle": "Application Web"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

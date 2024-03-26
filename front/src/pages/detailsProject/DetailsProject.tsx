@@ -17,7 +17,7 @@ const DetailsProject = () => {
   const project = projects.find(
     (project: any) => project.id === Number(params.id)
   );
-  const imgUrl = `${BaseURL}${project.attributes.images.data[0].attributes.url}`;
+  const imgUrl = `${BaseURL}`;
   console.log(project.attributes.githubLink);
   return (
     <div className="DetailsProject">
@@ -25,7 +25,7 @@ const DetailsProject = () => {
         {project.attributes.typeapp.data.attributes.libelle}
       </p>
       <div className="title">
-        <TitleWithStart title={project.attributes.Title} />
+        <TitleWithStart title={project.attributes.title} />
       </div>
       <motion.div
         animate={{ scale: 1 }}
@@ -33,7 +33,10 @@ const DetailsProject = () => {
         transition={{ type: "spring", duration: 2 }}
         className="banner"
       >
-        <img src={imgUrl} alt="insta" />
+        <img
+          src={require(`../../${project.attributes.images.data[0].attributes.url}`)}
+          alt="insta"
+        />
       </motion.div>
       <div className="About">
         <Row gutter={10} style={{ marginTop: 10 }}>
@@ -89,7 +92,7 @@ const DetailsProject = () => {
                     >
                       <FontAwesomeIcon icon={faGithub} size="1x" />
                       <a
-                        href={`${project.attributes.githubLink}`}
+                        href={`${project.attributes.lienGithub}`}
                         target="true"
                         style={{ marginLeft: 10, color: "white" }}
                       >
@@ -102,7 +105,7 @@ const DetailsProject = () => {
                     <FontAwesomeIcon icon={faGlobe} />
                     <a
                       style={{ marginLeft: 10, color: "white" }}
-                      href={`${project.attributes.link}`}
+                      href={`${project.attributes.lien}`}
                       target="true"
                     >
                       Lien Site
@@ -120,7 +123,7 @@ const DetailsProject = () => {
             <Image
               width={300}
               style={{ borderRadius: 20 }}
-              src={`${BaseURL}${image.attributes.url}`}
+              src={require(`../../${image.attributes.url}`)}
             />
           </div>
         ))}

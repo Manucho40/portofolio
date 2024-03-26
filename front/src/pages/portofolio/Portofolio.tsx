@@ -21,15 +21,6 @@ const Portofolio = () => {
   const [apiLoader, setApiLoader] = useState(true);
   const projects = useContext<any>(ProjectsContext).projects;
 
-  const portofolioTrie =
-    projects && typeProject === "All"
-      ? projects
-      : projects &&
-        projects.filter(
-          (project: any) =>
-            project.attributes.typeapp.data.attributes.libelle === typeProject
-        );
-
   useEffect(() => {
     if (projects) {
       setTimeout(() => {
@@ -38,28 +29,27 @@ const Portofolio = () => {
     }
   }, [projects]);
 
-  const portofolio: any =
-    portofolioTrie &&
-    portofolioTrie.map((project: any) => {
-      if (
-        project.attributes.images.data &&
-        project.attributes.images.data.length > 0 &&
-        project.attributes.images.data[0].attributes.url
-      ) {
-        return (
-          <CardProject
-            key={project.id}
-            img={project.attributes.images.data[0].attributes.url}
-            appName={project.attributes.Title}
-            typeApp={project.attributes.typeapp.data.attributes.libelle}
-            projectId={project.id}
-            // open={open}
-            // openModal={openModal}
-          />
-        );
-      }
-    });
-  console.log(apiLoader);
+  const portofolio: any = projects.map((project: any) => {
+    if (
+      project.attributes.images.data &&
+      project.attributes.images.data.length > 0 &&
+      project.attributes.images.data[0].attributes.url
+    ) {
+      return (
+        <CardProject
+          key={project.id}
+          img={project.attributes.images.data[0].attributes.url}
+          appName={project.attributes.titre}
+          typeApp={project.attributes.typeapp.data.attributes.libelle}
+          projectId={project.id}
+          // open={open}
+          // openModal={openModal}
+        />
+      );
+    }
+  });
+
+  console.log(projects);
   return (
     <div className="Portofolio">
       <div
