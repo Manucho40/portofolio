@@ -1,4 +1,3 @@
-import React, { useRef } from "react";
 import { Col, Row } from "antd";
 import "./Contact.css";
 import {
@@ -8,17 +7,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import CubeProfile from "../../components/Cubes/CubeProfile";
 import CardContact from "../../components/CardContact/CardContact";
 import IconeCircle from "../../components/Cubes/IconeCircle/IconeCircle";
 import { Link } from "react-router-dom";
 import fleche from "../../assets/fleche.png";
 import ContactForm from "../../components/Forms/ContactForm";
-import { Button, Form, Input } from "antd";
-import emailjs from "@emailjs/browser";
 import transition from "../../components/transition";
-
-const style: React.CSSProperties = { background: "#0092ff", padding: "8px 0" };
 
 const Contact = () => {
   return (
@@ -100,7 +94,7 @@ const Contact = () => {
               </p>
             </div>
             <div>
-              <img src={fleche} alt="" />
+              <img src={fleche} alt="" loading="lazy" />
             </div>
           </div>
           <div className="infoText">

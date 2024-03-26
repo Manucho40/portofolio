@@ -1,13 +1,10 @@
 import TitleWithStart from "../../components/TitleWithStart";
 import "./DetailsProject.css";
-import img from "../../assets/proj_instagram.png";
-import InfosCv from "../../components/InfosCv/InfosCv";
 import { Col, Image, Row } from "antd";
 import { motion } from "framer-motion";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
 import ProjectsContext from "../../context/ProjectsContext";
-import BaseURL from "../../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +14,6 @@ const DetailsProject = () => {
   const project = projects.find(
     (project: any) => project.id === Number(params.id)
   );
-  const imgUrl = `${BaseURL}`;
   console.log(project.attributes.githubLink);
   return (
     <div className="DetailsProject">
@@ -36,6 +32,7 @@ const DetailsProject = () => {
         <img
           src={require(`../../${project.attributes.images.data[0].attributes.url}`)}
           alt="insta"
+          loading="lazy"
         />
       </motion.div>
       <div className="About">
@@ -124,6 +121,7 @@ const DetailsProject = () => {
               width={300}
               style={{ borderRadius: 20 }}
               src={require(`../../${image.attributes.url}`)}
+              loading="lazy"
             />
           </div>
         ))}

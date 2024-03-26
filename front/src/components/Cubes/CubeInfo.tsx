@@ -20,7 +20,7 @@ const CubeInfo: FC<Props> = ({ img, text, taille }) => {
     >
       <Row style={{ height: "70%" }}>
         <Col span={24} style={{ display: "flex", justifyContent: "center" }}>
-          <img src={img} alt="" style={{ width: "75%" }} />
+          <img src={img} alt="" style={{ width: "75%" }} loading="lazy" />
         </Col>
       </Row>
       <Row

@@ -1,4 +1,4 @@
-import { Button, Space, Row, Col } from "antd";
+import { Row, Col } from "antd";
 import "./Accueil.css";
 import CubeInfo from "../../components/Cubes/CubeInfo";
 import img from "../../assets/logo512.png";
@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CubeProfile from "../../components/Cubes/CubeProfile";
 import moi from "../../assets/moi.png";
 import blog from "../../assets/blog.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "animate.css";
 import transition from "../../components/transition";
 const Accueil = () => {
@@ -51,6 +51,7 @@ const Accueil = () => {
                 width: "100%",
                 borderRadius: 30,
               }}
+              loading="lazy"
             />
           </Col>
           <Col
@@ -110,7 +111,7 @@ const Accueil = () => {
           lg={6}
           className="animate__animated animate__fadeInLeft"
         >
-          <a target="_blank" href="https://www.kae-dev.com/">
+          <a target="_blank" href="https://www.kae-dev.com/" rel="noreferrer">
             <CubeInfo text="Mon Blog" img={blog} taille={24} />
           </a>
         </Col>
@@ -137,16 +138,36 @@ const Accueil = () => {
             }}
           >
             <Col span={6} style={{ display: "flex", justifyContent: "center" }}>
-              <img src={webDevelpment} style={{ width: 40, height: 40 }} />
+              <img
+                src={webDevelpment}
+                style={{ width: 40, height: 40 }}
+                loading="lazy"
+                alt=""
+              />
             </Col>
             <Col span={6} style={{ display: "flex", justifyContent: "center" }}>
-              <img src={mobileDevelpment} style={{ width: 40, height: 40 }} />
+              <img
+                src={mobileDevelpment}
+                style={{ width: 40, height: 40 }}
+                loading="lazy"
+                alt=""
+              />
             </Col>
             <Col span={6} style={{ display: "flex", justifyContent: "center" }}>
-              <img src={reactDevelopment} style={{ width: 40, height: 40 }} />
+              <img
+                src={reactDevelopment}
+                style={{ width: 40, height: 40 }}
+                loading="lazy"
+                alt=""
+              />
             </Col>
             <Col span={6} style={{ display: "flex", justifyContent: "center" }}>
-              <img src={backend} style={{ width: 40, height: 40 }} />
+              <img
+                src={backend}
+                style={{ width: 40, height: 40 }}
+                loading="lazy"
+                alt=""
+              />
             </Col>
           </Row>
           <Row style={{ height: "50%" }}>
@@ -252,7 +273,7 @@ const Accueil = () => {
           >
             <Row>
               <Col span={24}>
-                <img src={fleche} alt="" />
+                <img src={fleche} alt="" loading="lazy" />
               </Col>
             </Row>
             <Row>

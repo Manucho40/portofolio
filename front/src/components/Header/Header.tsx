@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
-import { useState } from "react";
 import Nav from "./Nav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +8,6 @@ const Header = ({ openMenu, setOpenMenu }: any) => {
   return (
     <header>
       <div>
-        {/* <h1 className="logo">AngeDev</h1> */}
         <img style={{ width: 170 }} src={logo} alt="logo" />
       </div>
       <Nav />

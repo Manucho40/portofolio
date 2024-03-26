@@ -12,9 +12,9 @@ import TitleWithStart from "../../components/TitleWithStart";
 import transition from "../../components/transition";
 
 const Apropos = () => {
-  const openPDF = () => {
-    window.open("../../assets/CV_KOUASSI_Ange_Emmanuel.pdf", "_blank");
-  };
+  // const openPDF = () => {
+  //   window.open("../../assets/CV_KOUASSI_Ange_Emmanuel.pdf", "_blank");
+  // };
   return (
     <div className="Apropos">
       <Row gutter={16}>
@@ -33,7 +33,7 @@ const Apropos = () => {
             }}
             className="background box-shadow infos infosTechnic"
           >
-            <Image width="100%" src={moi} />
+            <Image width="100%" src={moi} loading="lazy" />
           </div>
         </Col>
         <Col className="gutter-row infoPlus" xs={24} sm={24} md={18} lg={18}>
@@ -51,7 +51,7 @@ const Apropos = () => {
             >
               <Row>
                 <Col span={24}>
-                  <img src={fleche} alt="" />
+                  <img src={fleche} alt="" loading="lazy" />
                 </Col>
               </Row>
               <Row style={{ marginTop: 5 }}>
@@ -128,17 +128,17 @@ const Apropos = () => {
           md={24}
           lg={6}
         >
-          <a href="../../assets/CV_KOUASSI_Ange_Emmanuel.pdf" download>
-            <button
-              style={{
-                background: "none",
-                cursor: "pointer",
-                borderRadius: 20,
-              }}
-            >
-              <CubeInfo text="Mon CV" img={cv} taille={24} />
-            </button>
-          </a>
+          {/* <a href="../../assets/CV_KOUASSI_Ange_Emmanuel.pdf" download> */}
+          <button
+            style={{
+              background: "none",
+              cursor: "pointer",
+              borderRadius: 20,
+            }}
+          >
+            <CubeInfo text="Mon CV" img={cv} taille={24} />
+          </button>
+          {/* </a> */}
         </Col>
         <Col className="gutter-row" xs={24} sm={24} md={24} lg={12}>
           <div
@@ -153,7 +153,7 @@ const Apropos = () => {
           >
             <Row>
               <Col span={24}>
-                <img src={fleche} alt="" />
+                <img src={fleche} alt="" loading="lazy" />
               </Col>
             </Row>
             <Row>

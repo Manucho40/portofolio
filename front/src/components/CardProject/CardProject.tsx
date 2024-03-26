@@ -4,8 +4,6 @@ import Meta from "antd/es/card/Meta";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import BaseURL from "../../config";
-import impImg from "../../assets/projet/Instagram1.png";
 type Props = {
   img: any;
   appName: string;
@@ -15,20 +13,6 @@ type Props = {
 
 const CardProject: React.FC<Props> = ({ img, appName, typeApp, projectId }) => {
   const ref = useRef<any>();
-
-  const cardSurvol = (Event: any) => {
-    if (ref.current) {
-      ref.current.style.transform = "scale(0.9)";
-      ref.current.style.transition = "ease-in-out 0.5s";
-    }
-  };
-  const resetCardSurvol = (Event: any) => {
-    if (ref.current) {
-      ref.current.style.transform = "scale(1)";
-      ref.current.style.transition = "ease-in-out 0.5s";
-    }
-  };
-
   return (
     <Link to={`/detail/${projectId}`}>
       <motion.div
@@ -49,9 +33,8 @@ const CardProject: React.FC<Props> = ({ img, appName, typeApp, projectId }) => {
               ref={ref}
               alt="example"
               style={{ borderRadius: 20, width: "100%", height: 200 }}
-              // onMouseOver={cardSurvol}
-              // onMouseLeave={resetCardSurvol}
               src={require(`../../${img}`)}
+              loading="lazy"
             />
           }
         >

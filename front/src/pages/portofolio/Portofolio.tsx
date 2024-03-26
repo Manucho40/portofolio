@@ -1,23 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Portofolio.css";
-import img from "../../assets/instaclone.png";
-import axios from "axios";
-import { Button, Col, Modal, Row } from "antd";
-import ModalProject from "../../components/Modals/ModalProject";
-import { faLinesLeaning } from "@fortawesome/free-solid-svg-icons";
-import { RotatingLines, ThreeCircles } from "react-loader-spinner";
+import { ThreeCircles } from "react-loader-spinner";
 import CardProject from "../../components/CardProject/CardProject";
-import { motion } from "framer-motion";
-import img1 from "../../assets/proj_instagram.png";
-import img2 from "../../assets/proj_chat.png";
-import img3 from "../../assets/proj_compress_img.png";
-import img4 from "../../assets/proj_moovies.png";
-import img5 from "../../assets/proj_morpion.png";
 import transition from "../../components/transition";
 import ProjectsContext from "../../context/ProjectsContext";
 const Portofolio = () => {
-  const [typeProject, setTypeProject] = useState<string>("All");
-  const [modaldata, setModaldata] = useState<any | null>(null);
   const [apiLoader, setApiLoader] = useState(true);
   const projects = useContext<any>(ProjectsContext).projects;
 
