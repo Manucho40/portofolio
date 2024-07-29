@@ -136,7 +136,7 @@
         "title": "F-IUTEA",
         "description": "Ce projet à fait l'objet de mon mémoire de fin d'étude de licence informatique. J'ai eu l'idée de réalisé un forum web pour les étudiants de mon université où ces dernieres pourraient débattre de sujets en relations avec les filiéres de l'université. Pour le front, j'ai utilisé du CSS natif et du Bootstrap. Pour le backend j'ai eu recours à du PHP natif.",
         "stack": "HTML, CSS, PHP",
-        "lien": "Null",
+        "lien": "https://f-iutea.angedev.com/",
         "lienGithub": "https://github.com/Manucho40/forumWeb",
         "images": {
           "data": [
